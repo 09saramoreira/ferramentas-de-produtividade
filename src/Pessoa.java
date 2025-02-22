@@ -48,4 +48,22 @@ public class Pessoa {
 
     }
 
+    public double calcularIMC() {
+        return this.peso / (this.altura * this.altura);
+    }
+
+    public String classificarIMC() {
+        double imc = this.calcularIMC();
+        if (imc < 18.5) {
+            return "Abaixo do peso.";
+        } else if (imc < 25.0) {
+            return "Peso Normal.";
+        } else if (imc < 30.0) {
+            return "Sobrepeso.";
+        } else if (imc < 35.0) {
+            return "Obesidade grau 1.";
+        } else {
+            return imc < 40.0 ? "Obesidade grau 2." : "Obesidade grau 3.";
+        }
+    }
 }
